@@ -10,7 +10,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>springboot-api</module>
         <module>springboot-redis</module>
+        <module>springboot-utils</module>
     </modules>
 
 </project>

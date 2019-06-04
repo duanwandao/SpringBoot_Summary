@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/springboot-api/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-utils/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-druid/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
