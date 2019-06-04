@@ -10,6 +10,55 @@
     <classPathEntry location="D:/aasoftware/mysql-connector-java-8.0.13.jar" />
 
     <context id="mysqlgenerator" targetRuntime="MyBatis3">
+
+        <!-- 非官方插件 https://github.com/itfsw/mybatis-generator-plugin -->
+        <!-- 查询单条数据插件 -->
+        <plugin
+                type="com.itfsw.mybatis.generator.plugins.SelectOneByExamplePlugin" />
+        <!-- 查询结果选择性返回插件 -->
+        <plugin
+                type="com.itfsw.mybatis.generator.plugins.SelectSelectivePlugin" />
+        <!-- Example Criteria 增强插件 -->
+        <plugin
+                type="com.itfsw.mybatis.generator.plugins.ExampleEnhancedPlugin" />
+        <!-- 数据Model属性对应Column获取插件 -->
+        <plugin
+                type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin" />
+        <!-- 逻辑删除插件 -->
+        <plugin
+                type="com.itfsw.mybatis.generator.plugins.LogicalDeletePlugin">
+            <!-- 这里配置的是全局逻辑删除列和逻辑删除值，当然在table中配置的值会覆盖该全局配置 -->
+            <!-- 逻辑删除列类型只能为数字、字符串或者布尔类型 -->
+            <property name="logicalDeleteColumn" value="deleted" />
+            <!-- 逻辑删除-已删除值 -->
+            <property name="logicalDeleteValue" value="1" />
+            <!-- 逻辑删除-未删除值 -->
+            <property name="logicalUnDeleteValue" value="0" />
+        </plugin>
+        <!-- MySQL分页插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.LimitPlugin" />
+        <!-- Example 目标包修改插件 -->
+        <!-- <plugin
+            type="com.itfsw.mybatis.generator.plugins.ExampleTargetPlugin">
+            修改Example类生成到目标包下
+            <property name="targetPackage"
+                value="com.yonyou.model.example" />
+        </plugin> -->
+        <!-- 批量插入插件 -->
+        <plugin
+                type="com.itfsw.mybatis.generator.plugins.BatchInsertPlugin">
+            <!-- 开启后可以实现官方插件根据属性是否为空决定是否插入该字段功能 ！需开启allowMultiQueries=true多条sql提交操作，所以不建议使用！插件默认不开启 -->
+            <property name="allowMultiQueries" value="false" />
+        </plugin>
+
+        <!-- 存在即更新插件 -->
+        <plugin type="com.itfsw.mybatis.generator.plugins.UpsertPlugin">
+            <!-- 支持upsertByExample，upsertByExampleSelective操作 ！需开启allowMultiQueries=true多条sql提交操作，所以不建议使用！插件默认不开启 -->
+            <property name="allowMultiQueries" value="false" />
+            <!-- 开启批量功能，支持batchUpsert,batchUpsertWithBLOBs,batchUpserSelective ！这几个方法中无法支持IncrementsPlugin的方法！插件默认不开启 -->
+            <property name="allowBatchUpsert" value="fasle" />
+        </plugin>
+
         <!-- 防止生成的代码中有很多注释，加入下面的配置控制 -->
         <commentGenerator>
             <!-- 是否去除自动生成的注释.true:是;false:否 -->
@@ -19,7 +68,7 @@
 
         <!-- 数据库连接 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/db_springboot_demo?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false"
+                        connectionURL="jdbc:mysql://localhost:3306/db_springboot_demo?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;nullCatalogMeansCurrent=true"
                         userId="root"
                         password="123456">
         </jdbcConnection>
