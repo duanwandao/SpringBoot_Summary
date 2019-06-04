@@ -9,6 +9,7 @@
         <module name="springboot-api" />
         <module name="springboot-druid" />
         <module name="springboot-mybatis" />
+        <module name="springboot-mybatis-generator" />
         <module name="springboot-redis" />
         <module name="springboot-utils" />
       </profile>
@@ -25,6 +26,7 @@
       <module name="springboot-api" options="-parameters" />
       <module name="springboot-druid" options="-parameters" />
       <module name="springboot-mybatis" options="-parameters" />
+      <module name="springboot-mybatis-generator" options="-parameters" />
       <module name="springboot-redis" options="-parameters" />
       <module name="springboot-utils" options="-parameters" />
     </option>

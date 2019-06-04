@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zjx.mybatisgenerator.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.zjx.mybatisgenerator.entity.User">
+    <constructor>
+      <arg column="user_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="user_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="user_age" javaType="java.lang.Integer" jdbcType="INTEGER" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.zjx.mybatisgenerator.entity.User">
+    insert into tb_user (user_id, user_name, user_age
+      )
+    values (#{userId,jdbcType=BIGINT}, #{userName,jdbcType=VARCHAR}, #{userAge,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zjx.mybatisgenerator.entity.User">
+    insert into tb_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="userAge != null">
+        user_age,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userAge != null">
+        #{userAge,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.zjx.mybatisgenerator.entity.User">
+    <constructor>
+      <arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="uname" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="passwd" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gentle" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="city" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.zjx.mybatisgenerator.entity.User">
+    insert into tb_user (id, uname, passwd, 
+      gentle, email, city
+      )
+    values (#{id,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{passwd,jdbcType=VARCHAR}, 
+      #{gentle,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zjx.mybatisgenerator.entity.User">
+    insert into tb_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uname != null">
+        uname,
+      </if>
+      <if test="passwd != null">
+        passwd,
+      </if>
+      <if test="gentle != null">
+        gentle,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uname != null">
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="passwd != null">
+        #{passwd,jdbcType=VARCHAR},
+      </if>
+      <if test="gentle != null">
+        #{gentle,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
