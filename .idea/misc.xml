@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/springboot-mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-druid/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-mybatis-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-pagehelper/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

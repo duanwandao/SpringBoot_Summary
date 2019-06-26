@@ -10,6 +10,7 @@
         <module name="springboot-druid" />
         <module name="springboot-mybatis" />
         <module name="springboot-mybatis-generator" />
+        <module name="springboot-mybatis-pagehelper" />
         <module name="springboot-redis" />
         <module name="springboot-utils" />
       </profile>
@@ -17,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="redisdemo" target="1.8" />
       <module name="RedisDemo" target="1.8" />
+      <module name="springboot-mybatis-pagehelper" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -27,6 +29,7 @@
       <module name="springboot-druid" options="-parameters" />
       <module name="springboot-mybatis" options="-parameters" />
       <module name="springboot-mybatis-generator" options="-parameters" />
+      <module name="springboot-mybatis-pagehelper" options="-parameters" />
       <module name="springboot-redis" options="-parameters" />
       <module name="springboot-utils" options="-parameters" />
     </option>
